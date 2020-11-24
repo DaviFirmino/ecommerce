@@ -57,7 +57,7 @@ class User extends Model {
 			(bool)$_SESSION[User::SESSION]["inadmin"] !== $inadmin
 
 		) {
-			header("Location: /admin/login");
+			header ("Location: /admin/login");
 			exit;
 		}
 
@@ -68,6 +68,15 @@ class User extends Model {
 	{
 		$_SESSION[User::SESSION] = NULL;
 	}
+
+
+	public static function listAll()
+	{
+
+		$sql = new Sql();
+		return $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY b.desperson");
+	}
+
 
 }
 
