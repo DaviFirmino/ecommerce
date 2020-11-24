@@ -1,0 +1,6 @@
+$ git init
+$ git add --all
+$ git commit -m "motivo do upload"
+$ git push origin master
+
+
